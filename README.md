@@ -1,4 +1,4 @@
-# CaptchaApp
+# Captcha App in ASP.NET MVC - 	Google reCAPTCHA API
 
 Environment: 
 -	ASP.NET MVC
