@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<h1>ASP.NET Captcha Example </h1>
+<h2>Using C# MVC</h2>
+<h2>Using Google reCAPTCHA:</h2>
+<a href="https://developers.google.com/recaptcha/">https://developers.google.com/recaptcha/</a>
+
+<h3>You need to first sign up for an API key pair from Google: </h3>
+<a href="http://www.google.com/recaptcha/admin">http://www.google.com/recaptcha/admin</a>
+
+
+<form action="/Home/Register" method="post" class="form-group" style="margin:10px;">
+    <div class="input-group" style="margin-bottom:5px;">
+        <input type="text" class="form-control" placeholder="Last Name" id="LastName" name="LastName" aria-describedby="basic-addon1">
+    </div>
+
+    <div class="input-group" style="margin-bottom:5px;">
+        <input type="text" class="form-control" placeholder="First Name" id="FirstName" name="FirstName"  aria-describedby="basic-addon1">
+    </div>
+
+    <div class="input-group" style="margin-bottom:5px;">
+        <!-- Google reCaptcha ---------------------------------------------------------------------    -->
+        <div class="g-recaptcha" id="g-recaptcha" style="">
+        </div>
+        <!-- Google reCaptcha ---------------------------------------------------------------------    -->
+    </div>
+
+    <div class="input-group" style="margin-bottom:5px;">
+        <input type="submit" class="btn btn-primary"  aria-describedby="basic-addon1" value="Submit">
+    </div>
+
+
+    <br />
+    @*<input type="submit" class="btn btn-primary form-control" value="Submit">*@
+</form>
+
+
+
+<div class="">
+
+</div>
+
+<script>
+    // ---------------------------------------------------------------------------
+    // reCaptcha
+    // ---------------------------------------------------------------------------
+    var widgetId1;
+    var onloadCallback = function () {
+        widgetId1 = grecaptcha.render('g-recaptcha', {
+            'sitekey': '--- you need to enter your public key here ---',
+            'theme': 'dark' // light
+        });
+    };
+    grecaptcha.reset();
+
+</script>
